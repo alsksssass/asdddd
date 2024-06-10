@@ -2,6 +2,7 @@
 #include "B.hpp"
 #include "C.hpp"
 #include <random>
+#include <cstdlib>
 #include <ctime>
 #include <iostream>
 
@@ -60,14 +61,14 @@ void identify(Base &p)
 			B &b_check = dynamic_cast<B &>(p);
 			(void)b_check;
 		}
-		catch (std::exception exp)
+		catch (std::exception &exp)
 		{
 			try
 			{
 				C &c_check = dynamic_cast<C &>(p);
 				(void)c_check;
 			}
-			catch (std::exception exp)
+			catch (std::exception &exp)
 			{
 				return;
 			}
